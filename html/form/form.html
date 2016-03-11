@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MBA Form</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script type="text/javascript" src="calendar.js"></script>
+</head>
+<body id="main_body" >
+	
+	<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a>MBA Form</a></h1>
+		<form id="form_1097854" class="appnitro"  method="post" action="">
+					<div class="form_description">
+			<h2>MBA Form</h2>
+			<p>Enter the details below</p>
+		</div>						
+			<ul >
+			
+					<li class="section_break">
+			<h3>DD Details</h3>
+			<p></p>
+		</li>		<li id="li_3" >
+		<label class="description" for="element_3">Name of Issuing Bank </label>
+		<div>
+			<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_4" >
+		<label class="description" for="element_4">Drawn At </label>
+		<div>
+			<input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_5" >
+		<label class="description" for="element_5">DD Number </label>
+		<div>
+			<input id="element_5" name="element_5" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_6" >
+		<label class="description" for="element_6">DD Date </label>
+		<span>
+			<input id="element_6_1" name="element_6_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_6_1">MM</label>
+		</span>
+		<span>
+			<input id="element_6_2" name="element_6_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_6_2">DD</label>
+		</span>
+		<span>
+	 		<input id="element_6_3" name="element_6_3" class="element text" size="4" maxlength="4" value="" type="text">
+			<label for="element_6_3">YYYY</label>
+		</span>
+	
+		<span id="calendar_6">
+			<img id="cal_img_6" class="datepicker" src="calendar.gif" alt="Pick a date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_6_3",
+			baseField    : "element_6",
+			displayArea  : "calendar_6",
+			button		 : "cal_img_6",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		 
+		</li>		<li id="li_7" >
+		<label class="description" for="element_7">Rupees </label>
+		<div>
+			<input id="element_7" name="element_7" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_28" >
+		<label class="description" for="element_28">Category </label>
+		<div>
+		<select class="element select medium" id="element_28" name="element_28"> 
+			<option value="" selected="selected"></option>
+<option value="1" >GM</option>
+<option value="2" >SC</option>
+<option value="3" >ST</option>
+<option value="4" >OBC</option>
+<option value="5" >PC</option>
+
+		</select>
+		</div> 
+		</li>		<li class="section_break">
+			<h3>Candidate Details</h3>
+			<p></p>
+		</li>		<li id="li_9" >
+		<label class="description" for="element_9">Name </label>
+		<span>
+			<input id="element_9_1" name= "element_9_1" class="element text" maxlength="255" size="8" value=""/>
+			<label>First</label>
+		</span>
+		<span>
+			<input id="element_9_2" name= "element_9_2" class="element text" maxlength="255" size="14" value=""/>
+			<label>Last</label>
+		</span> 
+		</li>		<li id="li_32" >
+		<label class="description" for="element_32">Permanent Address </label>
+		
+		<div>
+			<input id="element_32_1" name="element_32_1" class="element text large" value="" type="text">
+			<label for="element_32_1">Street Address</label>
+		</div>
+	
+		<div>
+			<input id="element_32_2" name="element_32_2" class="element text large" value="" type="text">
+			<label for="element_32_2">Address Line 2</label>
+		</div>
+	
+		<div class="left">
+			<input id="element_32_3" name="element_32_3" class="element text medium" value="" type="text">
+			<label for="element_32_3">City</label>
+		</div>
+	
+		<div class="right">
+			<input id="element_32_4" name="element_32_4" class="element text medium" value="" type="text">
+			<label for="element_32_4">State / Province / Region</label>
+		</div>
+	
+		<div class="left">
+			<input id="element_32_5" name="element_32_5" class="element text medium" maxlength="15" value="" type="text">
+			<label for="element_32_5">Postal / Zip Code</label>
+		</div>
+	
+		<div class="right">
+			<select class="element select medium" id="element_32_6" name="element_32_6"> 
+			<option value="" selected="selected"></option>
+<option value="Afghanistan" >Afghanistan</option>
+<option value="Albania" >Albania</option>
+<option value="Algeria" >Algeria</option>
+<option value="Andorra" >Andorra</option>
+<option value="Antigua and Barbuda" >Antigua and Barbuda</option>
+<option value="Argentina" >Argentina</option>
+<option value="Armenia" >Armenia</option>
+<option value="Australia" >Australia</option>
+<option value="Austria" >Austria</option>
+<option value="Azerbaijan" >Azerbaijan</option>
+<option value="Bahamas" >Bahamas</option>
+<option value="Bahrain" >Bahrain</option>
+<option value="Bangladesh" >Bangladesh</option>
+<option value="Barbados" >Barbados</option>
+<option value="Belarus" >Belarus</option>
+<option value="Belgium" >Belgium</option>
+<option value="Belize" >Belize</option>
+<option value="Benin" >Benin</option>
+<option value="Bhutan" >Bhutan</option>
+<option value="Bolivia" >Bolivia</option>
+<option value="Bosnia and Herzegovina" >Bosnia and Herzegovina</option>
+<option value="Botswana" >Botswana</option>
+<option value="Brazil" >Brazil</option>
+<option value="Brunei" >Brunei</option>
+<option value="Bulgaria" >Bulgaria</option>
+<option value="Burkina Faso" >Burkina Faso</option>
+<option value="Burundi" >Burundi</option>
+<option value="Cambodia" >Cambodia</option>
+<option value="Cameroon" >Cameroon</option>
+<option value="Canada" >Canada</option>
+<option value="Cape Verde" >Cape Verde</option>
+<option value="Central African Republic" >Central African Republic</option>
+<option value="Chad" >Chad</option>
+<option value="Chile" >Chile</option>
+<option value="China" >China</option>
+<option value="Colombia" >Colombia</option>
+<option value="Comoros" >Comoros</option>
+<option value="Congo" >Congo</option>
+<option value="Cook Islands and Niue" >Cook Islands and Niue</option>
+<option value="Costa Rica" >Costa Rica</option>
+<option value="Côte d'Ivoire" >Côte d'Ivoire</option>
+<option value="Croatia" >Croatia</option>
+<option value="Cuba" >Cuba</option>
+<option value="Cyprus" >Cyprus</option>
+<option value="Czech Republic" >Czech Republic</option>
+<option value="Denmark" >Denmark</option>
+<option value="Djibouti" >Djibouti</option>
+<option value="Dominica" >Dominica</option>
+<option value="Dominican Republic" >Dominican Republic</option>
+<option value="East Timor" >East Timor</option>
+<option value="Ecuador" >Ecuador</option>
+<option value="Egypt" >Egypt</option>
+<option value="El Salvador" >El Salvador</option>
+<option value="Equatorial Guinea" >Equatorial Guinea</option>
+<option value="Eritrea" >Eritrea</option>
+<option value="Estonia" >Estonia</option>
+<option value="Ethiopia" >Ethiopia</option>
+<option value="Fiji" >Fiji</option>
+<option value="Finland" >Finland</option>
+<option value="France" >France</option>
+<option value="Gabon" >Gabon</option>
+<option value="Gambia" >Gambia</option>
+<option value="Georgia" >Georgia</option>
+<option value="Germany" >Germany</option>
+<option value="Ghana" >Ghana</option>
+<option value="Greece" >Greece</option>
+<option value="Grenada" >Grenada</option>
+<option value="Guatemala" >Guatemala</option>
+<option value="Guinea" >Guinea</option>
+<option value="Guinea-Bissau" >Guinea-Bissau</option>
+<option value="Guyana" >Guyana</option>
+<option value="Haiti" >Haiti</option>
+<option value="Honduras" >Honduras</option>
+<option value="Hong Kong" >Hong Kong</option>
+<option value="Hungary" >Hungary</option>
+<option value="Iceland" >Iceland</option>
+<option value="India" >India</option>
+<option value="Indonesia" >Indonesia</option>
+<option value="Iran" >Iran</option>
+<option value="Iraq" >Iraq</option>
+<option value="Ireland" >Ireland</option>
+<option value="Israel" >Israel</option>
+<option value="Italy" >Italy</option>
+<option value="Jamaica" >Jamaica</option>
+<option value="Japan" >Japan</option>
+<option value="Jordan" >Jordan</option>
+<option value="Kazakhstan" >Kazakhstan</option>
+<option value="Kenya" >Kenya</option>
+<option value="Kiribati" >Kiribati</option>
+<option value="North Korea" >North Korea</option>
+<option value="South Korea" >South Korea</option>
+<option value="Kuwait" >Kuwait</option>
+<option value="Kyrgyzstan" >Kyrgyzstan</option>
+<option value="Laos" >Laos</option>
+<option value="Latvia" >Latvia</option>
+<option value="Lebanon" >Lebanon</option>
+<option value="Lesotho" >Lesotho</option>
+<option value="Liberia" >Liberia</option>
+<option value="Libya" >Libya</option>
+<option value="Liechtenstein" >Liechtenstein</option>
+<option value="Lithuania" >Lithuania</option>
+<option value="Luxembourg" >Luxembourg</option>
+<option value="Macedonia" >Macedonia</option>
+<option value="Madagascar" >Madagascar</option>
+<option value="Malawi" >Malawi</option>
+<option value="Malaysia" >Malaysia</option>
+<option value="Maldives" >Maldives</option>
+<option value="Mali" >Mali</option>
+<option value="Malta" >Malta</option>
+<option value="Marshall Islands" >Marshall Islands</option>
+<option value="Mauritania" >Mauritania</option>
+<option value="Mauritius" >Mauritius</option>
+<option value="Mexico" >Mexico</option>
+<option value="Micronesia" >Micronesia</option>
+<option value="Moldova" >Moldova</option>
+<option value="Monaco" >Monaco</option>
+<option value="Mongolia" >Mongolia</option>
+<option value="Montenegro" >Montenegro</option>
+<option value="Morocco" >Morocco</option>
+<option value="Mozambique" >Mozambique</option>
+<option value="Myanmar" >Myanmar</option>
+<option value="Namibia" >Namibia</option>
+<option value="Nauru" >Nauru</option>
+<option value="Nepal" >Nepal</option>
+<option value="Netherlands" >Netherlands</option>
+<option value="New Zealand" >New Zealand</option>
+<option value="Nicaragua" >Nicaragua</option>
+<option value="Niger" >Niger</option>
+<option value="Nigeria" >Nigeria</option>
+<option value="Norway" >Norway</option>
+<option value="Oman" >Oman</option>
+<option value="Pakistan" >Pakistan</option>
+<option value="Palau" >Palau</option>
+<option value="Panama" >Panama</option>
+<option value="Papua New Guinea" >Papua New Guinea</option>
+<option value="Paraguay" >Paraguay</option>
+<option value="Peru" >Peru</option>
+<option value="Philippines" >Philippines</option>
+<option value="Poland" >Poland</option>
+<option value="Portugal" >Portugal</option>
+<option value="Puerto Rico" >Puerto Rico</option>
+<option value="Qatar" >Qatar</option>
+<option value="Romania" >Romania</option>
+<option value="Russia" >Russia</option>
+<option value="Rwanda" >Rwanda</option>
+<option value="Saint Kitts and Nevis" >Saint Kitts and Nevis</option>
+<option value="Saint Lucia" >Saint Lucia</option>
+<option value="Saint Vincent and the Grenadines" >Saint Vincent and the Grenadines</option>
+<option value="Samoa" >Samoa</option>
+<option value="San Marino" >San Marino</option>
+<option value="Sao Tome and Principe" >Sao Tome and Principe</option>
+<option value="Saudi Arabia" >Saudi Arabia</option>
+<option value="Senegal" >Senegal</option>
+<option value="Serbia and Montenegro" >Serbia and Montenegro</option>
+<option value="Seychelles" >Seychelles</option>
+<option value="Sierra Leone" >Sierra Leone</option>
+<option value="Singapore" >Singapore</option>
+<option value="Slovakia" >Slovakia</option>
+<option value="Slovenia" >Slovenia</option>
+<option value="Solomon Islands" >Solomon Islands</option>
+<option value="Somalia" >Somalia</option>
+<option value="South Africa" >South Africa</option>
+<option value="Spain" >Spain</option>
+<option value="Sri Lanka" >Sri Lanka</option>
+<option value="Sudan" >Sudan</option>
+<option value="Suriname" >Suriname</option>
+<option value="Swaziland" >Swaziland</option>
+<option value="Sweden" >Sweden</option>
+<option value="Switzerland" >Switzerland</option>
+<option value="Syria" >Syria</option>
+<option value="Taiwan" >Taiwan</option>
+<option value="Tajikistan" >Tajikistan</option>
+<option value="Tanzania" >Tanzania</option>
+<option value="Thailand" >Thailand</option>
+<option value="Togo" >Togo</option>
+<option value="Tonga" >Tonga</option>
+<option value="Trinidad and Tobago" >Trinidad and Tobago</option>
+<option value="Tunisia" >Tunisia</option>
+<option value="Turkey" >Turkey</option>
+<option value="Turkmenistan" >Turkmenistan</option>
+<option value="Tuvalu" >Tuvalu</option>
+<option value="Uganda" >Uganda</option>
+<option value="Ukraine" >Ukraine</option>
+<option value="United Arab Emirates" >United Arab Emirates</option>
+<option value="United Kingdom" >United Kingdom</option>
+<option value="United States" >United States</option>
+<option value="Uruguay" >Uruguay</option>
+<option value="Uzbekistan" >Uzbekistan</option>
+<option value="Vanuatu" >Vanuatu</option>
+<option value="Vatican City" >Vatican City</option>
+<option value="Venezuela" >Venezuela</option>
+<option value="Vietnam" >Vietnam</option>
+<option value="Yemen" >Yemen</option>
+<option value="Zambia" >Zambia</option>
+<option value="Zimbabwe" >Zimbabwe</option>
+	
+			</select>
+		<label for="element_32_6">Country</label>
+	</div> 
+		</li>		<li id="li_33" >
+		<label class="description" for="element_33">Correspondence Address </label>
+		
+		<div>
+			<input id="element_33_1" name="element_33_1" class="element text large" value="" type="text">
+			<label for="element_33_1">Street Address</label>
+		</div>
+	
+		<div>
+			<input id="element_33_2" name="element_33_2" class="element text large" value="" type="text">
+			<label for="element_33_2">Address Line 2</label>
+		</div>
+	
+		<div class="left">
+			<input id="element_33_3" name="element_33_3" class="element text medium" value="" type="text">
+			<label for="element_33_3">City</label>
+		</div>
+	
+		<div class="right">
+			<input id="element_33_4" name="element_33_4" class="element text medium" value="" type="text">
+			<label for="element_33_4">State / Province / Region</label>
+		</div>
+	
+		<div class="left">
+			<input id="element_33_5" name="element_33_5" class="element text medium" maxlength="15" value="" type="text">
+			<label for="element_33_5">Postal / Zip Code</label>
+		</div>
+	
+		<div class="right">
+			<select class="element select medium" id="element_33_6" name="element_33_6"> 
+			<option value="" selected="selected"></option>
+<option value="Afghanistan" >Afghanistan</option>
+<option value="Albania" >Albania</option>
+<option value="Algeria" >Algeria</option>
+<option value="Andorra" >Andorra</option>
+<option value="Antigua and Barbuda" >Antigua and Barbuda</option>
+<option value="Argentina" >Argentina</option>
+<option value="Armenia" >Armenia</option>
+<option value="Australia" >Australia</option>
+<option value="Austria" >Austria</option>
+<option value="Azerbaijan" >Azerbaijan</option>
+<option value="Bahamas" >Bahamas</option>
+<option value="Bahrain" >Bahrain</option>
+<option value="Bangladesh" >Bangladesh</option>
+<option value="Barbados" >Barbados</option>
+<option value="Belarus" >Belarus</option>
+<option value="Belgium" >Belgium</option>
+<option value="Belize" >Belize</option>
+<option value="Benin" >Benin</option>
+<option value="Bhutan" >Bhutan</option>
+<option value="Bolivia" >Bolivia</option>
+<option value="Bosnia and Herzegovina" >Bosnia and Herzegovina</option>
+<option value="Botswana" >Botswana</option>
+<option value="Brazil" >Brazil</option>
+<option value="Brunei" >Brunei</option>
+<option value="Bulgaria" >Bulgaria</option>
+<option value="Burkina Faso" >Burkina Faso</option>
+<option value="Burundi" >Burundi</option>
+<option value="Cambodia" >Cambodia</option>
+<option value="Cameroon" >Cameroon</option>
+<option value="Canada" >Canada</option>
+<option value="Cape Verde" >Cape Verde</option>
+<option value="Central African Republic" >Central African Republic</option>
+<option value="Chad" >Chad</option>
+<option value="Chile" >Chile</option>
+<option value="China" >China</option>
+<option value="Colombia" >Colombia</option>
+<option value="Comoros" >Comoros</option>
+<option value="Congo" >Congo</option>
+<option value="Cook Islands and Niue" >Cook Islands and Niue</option>
+<option value="Costa Rica" >Costa Rica</option>
+<option value="Côte d'Ivoire" >Côte d'Ivoire</option>
+<option value="Croatia" >Croatia</option>
+<option value="Cuba" >Cuba</option>
+<option value="Cyprus" >Cyprus</option>
+<option value="Czech Republic" >Czech Republic</option>
+<option value="Denmark" >Denmark</option>
+<option value="Djibouti" >Djibouti</option>
+<option value="Dominica" >Dominica</option>
+<option value="Dominican Republic" >Dominican Republic</option>
+<option value="East Timor" >East Timor</option>
+<option value="Ecuador" >Ecuador</option>
+<option value="Egypt" >Egypt</option>
+<option value="El Salvador" >El Salvador</option>
+<option value="Equatorial Guinea" >Equatorial Guinea</option>
+<option value="Eritrea" >Eritrea</option>
+<option value="Estonia" >Estonia</option>
+<option value="Ethiopia" >Ethiopia</option>
+<option value="Fiji" >Fiji</option>
+<option value="Finland" >Finland</option>
+<option value="France" >France</option>
+<option value="Gabon" >Gabon</option>
+<option value="Gambia" >Gambia</option>
+<option value="Georgia" >Georgia</option>
+<option value="Germany" >Germany</option>
+<option value="Ghana" >Ghana</option>
+<option value="Greece" >Greece</option>
+<option value="Grenada" >Grenada</option>
+<option value="Guatemala" >Guatemala</option>
+<option value="Guinea" >Guinea</option>
+<option value="Guinea-Bissau" >Guinea-Bissau</option>
+<option value="Guyana" >Guyana</option>
+<option value="Haiti" >Haiti</option>
+<option value="Honduras" >Honduras</option>
+<option value="Hong Kong" >Hong Kong</option>
+<option value="Hungary" >Hungary</option>
+<option value="Iceland" >Iceland</option>
+<option value="India" >India</option>
+<option value="Indonesia" >Indonesia</option>
+<option value="Iran" >Iran</option>
+<option value="Iraq" >Iraq</option>
+<option value="Ireland" >Ireland</option>
+<option value="Israel" >Israel</option>
+<option value="Italy" >Italy</option>
+<option value="Jamaica" >Jamaica</option>
+<option value="Japan" >Japan</option>
+<option value="Jordan" >Jordan</option>
+<option value="Kazakhstan" >Kazakhstan</option>
+<option value="Kenya" >Kenya</option>
+<option value="Kiribati" >Kiribati</option>
+<option value="North Korea" >North Korea</option>
+<option value="South Korea" >South Korea</option>
+<option value="Kuwait" >Kuwait</option>
+<option value="Kyrgyzstan" >Kyrgyzstan</option>
+<option value="Laos" >Laos</option>
+<option value="Latvia" >Latvia</option>
+<option value="Lebanon" >Lebanon</option>
+<option value="Lesotho" >Lesotho</option>
+<option value="Liberia" >Liberia</option>
+<option value="Libya" >Libya</option>
+<option value="Liechtenstein" >Liechtenstein</option>
+<option value="Lithuania" >Lithuania</option>
+<option value="Luxembourg" >Luxembourg</option>
+<option value="Macedonia" >Macedonia</option>
+<option value="Madagascar" >Madagascar</option>
+<option value="Malawi" >Malawi</option>
+<option value="Malaysia" >Malaysia</option>
+<option value="Maldives" >Maldives</option>
+<option value="Mali" >Mali</option>
+<option value="Malta" >Malta</option>
+<option value="Marshall Islands" >Marshall Islands</option>
+<option value="Mauritania" >Mauritania</option>
+<option value="Mauritius" >Mauritius</option>
+<option value="Mexico" >Mexico</option>
+<option value="Micronesia" >Micronesia</option>
+<option value="Moldova" >Moldova</option>
+<option value="Monaco" >Monaco</option>
+<option value="Mongolia" >Mongolia</option>
+<option value="Montenegro" >Montenegro</option>
+<option value="Morocco" >Morocco</option>
+<option value="Mozambique" >Mozambique</option>
+<option value="Myanmar" >Myanmar</option>
+<option value="Namibia" >Namibia</option>
+<option value="Nauru" >Nauru</option>
+<option value="Nepal" >Nepal</option>
+<option value="Netherlands" >Netherlands</option>
+<option value="New Zealand" >New Zealand</option>
+<option value="Nicaragua" >Nicaragua</option>
+<option value="Niger" >Niger</option>
+<option value="Nigeria" >Nigeria</option>
+<option value="Norway" >Norway</option>
+<option value="Oman" >Oman</option>
+<option value="Pakistan" >Pakistan</option>
+<option value="Palau" >Palau</option>
+<option value="Panama" >Panama</option>
+<option value="Papua New Guinea" >Papua New Guinea</option>
+<option value="Paraguay" >Paraguay</option>
+<option value="Peru" >Peru</option>
+<option value="Philippines" >Philippines</option>
+<option value="Poland" >Poland</option>
+<option value="Portugal" >Portugal</option>
+<option value="Puerto Rico" >Puerto Rico</option>
+<option value="Qatar" >Qatar</option>
+<option value="Romania" >Romania</option>
+<option value="Russia" >Russia</option>
+<option value="Rwanda" >Rwanda</option>
+<option value="Saint Kitts and Nevis" >Saint Kitts and Nevis</option>
+<option value="Saint Lucia" >Saint Lucia</option>
+<option value="Saint Vincent and the Grenadines" >Saint Vincent and the Grenadines</option>
+<option value="Samoa" >Samoa</option>
+<option value="San Marino" >San Marino</option>
+<option value="Sao Tome and Principe" >Sao Tome and Principe</option>
+<option value="Saudi Arabia" >Saudi Arabia</option>
+<option value="Senegal" >Senegal</option>
+<option value="Serbia and Montenegro" >Serbia and Montenegro</option>
+<option value="Seychelles" >Seychelles</option>
+<option value="Sierra Leone" >Sierra Leone</option>
+<option value="Singapore" >Singapore</option>
+<option value="Slovakia" >Slovakia</option>
+<option value="Slovenia" >Slovenia</option>
+<option value="Solomon Islands" >Solomon Islands</option>
+<option value="Somalia" >Somalia</option>
+<option value="South Africa" >South Africa</option>
+<option value="Spain" >Spain</option>
+<option value="Sri Lanka" >Sri Lanka</option>
+<option value="Sudan" >Sudan</option>
+<option value="Suriname" >Suriname</option>
+<option value="Swaziland" >Swaziland</option>
+<option value="Sweden" >Sweden</option>
+<option value="Switzerland" >Switzerland</option>
+<option value="Syria" >Syria</option>
+<option value="Taiwan" >Taiwan</option>
+<option value="Tajikistan" >Tajikistan</option>
+<option value="Tanzania" >Tanzania</option>
+<option value="Thailand" >Thailand</option>
+<option value="Togo" >Togo</option>
+<option value="Tonga" >Tonga</option>
+<option value="Trinidad and Tobago" >Trinidad and Tobago</option>
+<option value="Tunisia" >Tunisia</option>
+<option value="Turkey" >Turkey</option>
+<option value="Turkmenistan" >Turkmenistan</option>
+<option value="Tuvalu" >Tuvalu</option>
+<option value="Uganda" >Uganda</option>
+<option value="Ukraine" >Ukraine</option>
+<option value="United Arab Emirates" >United Arab Emirates</option>
+<option value="United Kingdom" >United Kingdom</option>
+<option value="United States" >United States</option>
+<option value="Uruguay" >Uruguay</option>
+<option value="Uzbekistan" >Uzbekistan</option>
+<option value="Vanuatu" >Vanuatu</option>
+<option value="Vatican City" >Vatican City</option>
+<option value="Venezuela" >Venezuela</option>
+<option value="Vietnam" >Vietnam</option>
+<option value="Yemen" >Yemen</option>
+<option value="Zambia" >Zambia</option>
+<option value="Zimbabwe" >Zimbabwe</option>
+	
+			</select>
+		<label for="element_33_6">Country</label>
+	</div> 
+		</li>		<li id="li_12" >
+		<label class="description" for="element_12">Telephone (with STD code) </label>
+		<div>
+			<input id="element_12" name="element_12" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_13" >
+		<label class="description" for="element_13">Mobile Number </label>
+		<div>
+			<input id="element_13" name="element_13" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_14" >
+		<label class="description" for="element_14">Email </label>
+		<div>
+			<input id="element_14" name="element_14" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_15" >
+		<label class="description" for="element_15">Name and Address of Father/Guardian
+ </label>
+		<div>
+			<textarea id="element_15" name="element_15" class="element textarea medium"></textarea> 
+		</div> 
+		</li>		<li id="li_16" >
+		<label class="description" for="element_16">Occupation of Father/Guardian </label>
+		<div>
+			<input id="element_16" name="element_16" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_17" >
+		<label class="description" for="element_17">Annual Income </label>
+		<div>
+			<input id="element_17" name="element_17" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_18" >
+		<label class="description" for="element_18">Religion </label>
+		<div>
+			<input id="element_18" name="element_18" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_19" >
+		<label class="description" for="element_19">Caste/Subcaste </label>
+		<div>
+			<input id="element_19" name="element_19" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_29" >
+		<label class="description" for="element_29">Do you have copy of certificate? (If applicable) </label>
+		<span>
+			<input id="element_29_1" name="element_29" class="element radio" type="radio" value="1" />
+<label class="choice" for="element_29_1">Yes</label>
+<input id="element_29_2" name="element_29" class="element radio" type="radio" value="2" />
+<label class="choice" for="element_29_2">No</label>
+
+		</span> 
+		</li>		<li id="li_20" >
+		<label class="description" for="element_20">Place of Domicile </label>
+		<div>
+			<input id="element_20" name="element_20" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_21" >
+		<label class="description" for="element_21">Nationality </label>
+		<div>
+			<input id="element_21" name="element_21" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_30" >
+		<label class="description" for="element_30">Do you have a copy of the physically challenged certificate (If applicable) </label>
+		<span>
+			<input id="element_30_1" name="element_30" class="element radio" type="radio" value="1" />
+<label class="choice" for="element_30_1">Yes</label>
+<input id="element_30_2" name="element_30" class="element radio" type="radio" value="2" />
+<label class="choice" for="element_30_2">No</label>
+
+		</span> 
+		</li>		<li id="li_22" >
+		<label class="description" for="element_22">Date of Birth </label>
+		<span>
+			<input id="element_22_1" name="element_22_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_22_1">MM</label>
+		</span>
+		<span>
+			<input id="element_22_2" name="element_22_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_22_2">DD</label>
+		</span>
+		<span>
+	 		<input id="element_22_3" name="element_22_3" class="element text" size="4" maxlength="4" value="" type="text">
+			<label for="element_22_3">YYYY</label>
+		</span>
+	
+		<span id="calendar_22">
+			<img id="cal_img_22" class="datepicker" src="calendar.gif" alt="Pick a date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_22_3",
+			baseField    : "element_22",
+			displayArea  : "calendar_22",
+			button		 : "cal_img_22",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		 
+		</li>		<li id="li_23" >
+		<label class="description" for="element_23">Date of Birth (in words) </label>
+		<div>
+			<input id="element_23" name="element_23" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_31" >
+		<label class="description" for="element_31">Qualifying Examination passes </label>
+		<span>
+			<input id="element_31_1" name="element_31" class="element radio" type="radio" value="1" />
+<label class="choice" for="element_31_1">B.E</label>
+<input id="element_31_2" name="element_31" class="element radio" type="radio" value="2" />
+<label class="choice" for="element_31_2">B.Tech</label>
+<input id="element_31_3" name="element_31" class="element radio" type="radio" value="3" />
+<label class="choice" for="element_31_3">B.A</label>
+<input id="element_31_4" name="element_31" class="element radio" type="radio" value="4" />
+<label class="choice" for="element_31_4">B.Com</label>
+<input id="element_31_5" name="element_31" class="element radio" type="radio" value="5" />
+<label class="choice" for="element_31_5">BCA</label>
+<input id="element_31_6" name="element_31" class="element radio" type="radio" value="6" />
+<label class="choice" for="element_31_6">B.Sc</label>
+<input id="element_31_7" name="element_31" class="element radio" type="radio" value="7" />
+<label class="choice" for="element_31_7">BBM</label>
+
+		</span> 
+		</li>		<li id="li_24" >
+		<label class="description" for="element_24">if others, please specify </label>
+		<div>
+			<input id="element_24" name="element_24" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_25" >
+		<label class="description" for="element_25">Institution of study </label>
+		<div>
+			<input id="element_25" name="element_25" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_26" >
+		<label class="description" for="element_26">Studied from </label>
+		<span>
+			<input id="element_26_1" name="element_26_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_26_1">MM</label>
+		</span>
+		<span>
+			<input id="element_26_2" name="element_26_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_26_2">DD</label>
+		</span>
+		<span>
+	 		<input id="element_26_3" name="element_26_3" class="element text" size="4" maxlength="4" value="" type="text">
+			<label for="element_26_3">YYYY</label>
+		</span>
+	
+		<span id="calendar_26">
+			<img id="cal_img_26" class="datepicker" src="calendar.gif" alt="Pick a date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_26_3",
+			baseField    : "element_26",
+			displayArea  : "calendar_26",
+			button		 : "cal_img_26",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		 
+		</li>		<li id="li_27" >
+		<label class="description" for="element_27">Studied to </label>
+		<span>
+			<input id="element_27_1" name="element_27_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_27_1">MM</label>
+		</span>
+		<span>
+			<input id="element_27_2" name="element_27_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_27_2">DD</label>
+		</span>
+		<span>
+	 		<input id="element_27_3" name="element_27_3" class="element text" size="4" maxlength="4" value="" type="text">
+			<label for="element_27_3">YYYY</label>
+		</span>
+	
+		<span id="calendar_27">
+			<img id="cal_img_27" class="datepicker" src="calendar.gif" alt="Pick a date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_27_3",
+			baseField    : "element_27",
+			displayArea  : "calendar_27",
+			button		 : "cal_img_27",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		 
+		</li>		<li id="li_34" >
+		<label class="description" for="element_34">CAT 2015 Score </label>
+		<div>
+			<input id="element_34" name="element_34" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_35" >
+		<label class="description" for="element_35">CAT 2015 Percentile </label>
+		<div>
+			<input id="element_35" name="element_35" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_36" >
+		<label class="description" for="element_36">GMAT 2015 Score </label>
+		<div>
+			<input id="element_36" name="element_36" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_37" >
+		<label class="description" for="element_37">GMAT 2015 Percentile </label>
+		<div>
+			<input id="element_37" name="element_37" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_38" >
+		<label class="description" for="element_38">CAT-2015/GMAT -2015 Hall Ticket/ Admit Card/Test Registration No </label>
+		<div>
+			<input id="element_38" name="element_38" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_39" >
+		<label class="description" for="element_39">No. of Years worked </label>
+		<div>
+			<input id="element_39" name="element_39" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_40" >
+		<label class="description" for="element_40">And months </label>
+		<div>
+			<input id="element_40" name="element_40" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_43" >
+		<label class="description" for="element_43">Specify choice of center for MBA selection process </label>
+		<span>
+			<input id="element_43_1" name="element_43" class="element radio" type="radio" value="1" />
+<label class="choice" for="element_43_1">NITK, Surathkal</label>
+<input id="element_43_2" name="element_43" class="element radio" type="radio" value="2" />
+<label class="choice" for="element_43_2">New Delhi</label>
+
+		</span> 
+		</li>		<li id="li_41" >
+		<label class="description" for="element_41">Place </label>
+		<div>
+			<input id="element_41" name="element_41" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_42" >
+		<label class="description" for="element_42">Date </label>
+		<div>
+			<input id="element_42" name="element_42" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>
+			
+					<li class="buttons">
+			    <input type="hidden" name="form_id" value="1097854" />
+			    
+				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+		</li>
+			</ul>
+		</form>	
+		<div id="footer">
+			Generated by <a href="http://www.phpform.org">pForm</a>
+		</div>
+	</div>
+	<img id="bottom" src="bottom.png" alt="">
+	</body>
+</html>
