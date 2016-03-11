@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <?php
 
-	$db = new mysqli("localhost","root","root","testdb");
-	if(!isset($_COOKIE[$NITK_PORTAL]))
+	include '../../redirect.php' ;
+	
+	$db = new mysqli($db_server,$db_user,$db_pass,$db);
+	if(isset($_COOKIE['NITK']))
 	{
-		$value = $_COOKIE[$NITK_PORTAL];
+		$value = $_COOKIE['NITK'];
 		$result = $db->query("SELECT * FROM `lg_details` WHERE `cookie` = '$value'");
 
-		if(mysqli_num_rows($result))
-			header('Location: http://localhost/project/index.html');
+		if(mysqli_num_rows($result)==0)
+		{
+			header($index);
+			exit;
+		}
 			
 	}
 	else
-		header('Location: http://localhost/project/index.html');
+	{
+		header($index);
+		exit;
+	}
 		
 
-?>
-<html>
-	<head>
-		<title>
+?>		
+</html>
+<html lang="en">
+<head>
+  <title>
 			MBA WEB-FORM
 		</title>
 		<meta charset="utf-8">
@@ -26,35 +35,23 @@
   		<link rel="stylesheet" href="../../bootstrap-3.3.6/css/bootstrap.min.css">
   		<script src="../../jquery/jquery.js"></script>
   		<script src="../../bootstrap-3.3.6/js/bootstrap.min.js"></script>
-		<style>
-			header { 
-				background: url(images/nitk.jpg) no-repeat center center fixed; 
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-			}
-			.container{
-				margin-left:5%;
-				float:left;
-			}
-			.panel-footer{
-				clear:both;
-			}
-			.form-horizontal{
-				margin-left:150px;
-			}
-			.btn-btn-default{
-				width:100px;
-				height:40px;
-			}
-			.panel-footer{
-				margin-top:13.5%;		
-			}	
-			.col-sm-3-adjustment{
-				width:20px;
-			}
-			input[type=number]::-webkit-inner-spin-button, 
+  <style>
+    
+    .row.content {height: 4500px;}
+    
+    
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
 			input[type=number]::-webkit-outer-spin-button { 
   					  -webkit-appearance: none;
   					  -moz-appearance: none;
@@ -72,28 +69,43 @@
 			body {
 				position: relative;
 			}
-			ul.nav-pills {
+    
+
+	   ul.nav-pills {
 				top: 20px;
 				position: fixed;
 			}
-			.adjustment-sidenav{
-				
+			.form-horizontal{
+				margin-left:150px;
 			}
-			.row.content {height: 1500px}
-			.sidenav {
-				background-color: #f1f1f1;
-				height: 100%;
+			.btn-btn-default{
+				width:100px;
+				height:40px;
 			}
-		</style>
-		
-	</head>
-	<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
-		<header>
-		</header>
-		
-		<div class="container">
-		<div class="adjustment-sidenav">
-				<nav class="col-sm-1 sidenav" id="myScrollspy">
+    }
+  </style>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.php">NITK PORTAL</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+		<li class="active"><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+</head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+	
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav ">
+      
+				<nav id="myScrollspy">
 					<ul class="nav nav-pills nav-stacked">
 						<li class="active"><a href="#section1">Section 1</a></li>
 						<li><a href="#section2">Section 2</a></li>
@@ -108,15 +120,14 @@
 
 				</nav>
 					
-		</div>
-
-				<div class="modal fade" id="myModal" role="dialog">
-					<div class="modal-dialog">
+		<br>
+      <div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog" style="width:50%;">
     
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">Documents (self-attested photo copies) to be enclosed (original to be submitted at the time of admission) with the application.</h4>
+								<h3 class="modal-title">Documents(self-attested photo copies)to be enclosed(original to be submitted at the time of admission)with the application.</h3>
 							</div>
 							<div class="modal-body">
 								
@@ -137,83 +148,55 @@
       
 					</div>
 				</div>
-  
-		
-		<div class="col-sm-11">
-		<div class="panel panel-primary" style="width:115%;">
+    </div>
+
+    <div class="col-sm-10">
+      <div class="panel panel-primary" style="width:100%;">
       			<div class="panel-heading">Fill up the Details</div>
       		<div class="panel-body">
 			<form action="mba-generate.php" method="post">
 			<div class="jumbotron" id="section1">
   			<fieldset class="form-group">
-    				<label class="col-sm-6">Enter Your Name (in block letters as mentioned in Degree Certificate)</label>
+    				<label class="col-sm-5">Enter Your Name (in block letters as mentioned in Degree Certificate)</label>
     				<input type="text" class="col-sm-6" id="nme1" name="jumbo_one[]" require><br><br><br>
   			
-    			<label class="col-sm-6" for="addr">Enter Your Permanent Address</label>
-				<input class="col-sm-6" id="strtaddr" name="jumbo_one[]" value="" type="text" require>		
-				<small class="text-muted">Street Address</small><br>
+    			<label class="col-sm-5" for="addr">Enter Your Permanent Address</label>
+				<input class="col-sm-6" id="strtaddr" name="jumbo_one[]" value="" type="text" placeholder="Street Address" require><br><br>
 				
-				<div class="col-sm-6"></div>
-				<input id="addrline2" class="col-sm-6" name="jumbo_one[]" value="" type="text" require>
-				<span class="col-sm-6"></span><small class="text-muted">Address Line 2</small><br>
+				<div class="col-sm-5"></div>
+				<input id="addrline2" class="col-sm-6" name="jumbo_one[]" value="" placeholder="Address Line 2" type="text" require><br><br>
 				
-				<div class="col-sm-6"></div>
-				<input id="city" name="jumbo_one[]" class="col-sm-3" value="" type="text" require>
-				<input id="state" name="jumbo_one[]" class="col-sm-3" value="" type="text" require>
+				<div class="col-sm-5"></div>
+				<input id="city" name="jumbo_one[]" class="col-sm-3" value="" placeholder="City" type="text" require>
+				<input id="state" name="jumbo_one[]" class="col-sm-3" value="" placeholder="State" type="text" require><br><br>
 
-				<div class="col-sm-6"></div>
-				<div class="col-adjustment">
-				<small class="text-muted">City</small>
-				<small class="text-muted" style="margin-left:22.5%;">State</small>
-				</div>
-
-				<div class="col-sm-6"></div>
-				<input id="pincode" name="jumbo_one[]" class="col-sm-3" value="" type="number" require>
-				<input id="country" name="jumbo_one[]" class="col-sm-3" value="" type="text" require>
-
-				<div class="col-sm-6"></div>
-				<div class="col-adjustment">
-				<small class="text-muted">Pincode</small>
-				<small class="text-muted" style="margin-left:20.5%;">Country</small>
-				</div><br><br>
+				<div class="col-sm-5"></div>
+				<input id="pincode" name="jumbo_one[]" class="col-sm-3" value="" placeholder="pincode" type="number" require>
+				<input id="country" name="jumbo_one[]" class="col-sm-3" value="" placeholder="country" type="text" require><br><br><br>
 			
-    				<label class="col-sm-6" for="addr">Enter Your Correspondence Address</label>
-				<input class="col-sm-6" id="corraddr" name="jumbo_one[]" value="" type="text" require>		
-				<small class="text-muted">Street Address</small><br>
+    			<label class="col-sm-5" for="addr">Enter Your Correspondence Address</label>
+				<input class="col-sm-6" id="strtaddr" name="jumbo_one[]" value="" type="text" placeholder="Street Address" require><br><br>
 				
-				<div class="col-sm-6"></div>
-				<input id="addrline2" class="col-sm-6" name="jumbo_one[]" value="" type="text" require>
-				<span class="col-sm-6"></span><small class="text-muted">Address Line 2</small><br>
+				<div class="col-sm-5"></div>
+				<input id="addrline2" class="col-sm-6" name="jumbo_one[]" value="" placeholder="Address Line 2" type="text" require><br><br>
 				
-				<div class="col-sm-6"></div>
-				<input id="city" name="jumbo_one[]" class="col-sm-3" value="" type="text" require>
-				<input id="state" name="jumbo_one[]" class="col-sm-3" value="" type="text" require>
+				<div class="col-sm-5"></div>
+				<input id="city" name="jumbo_one[]" class="col-sm-3" value="" placeholder="City" type="text" require>
+				<input id="state" name="jumbo_one[]" class="col-sm-3" value="" placeholder="State" type="text" require><br><br>
 
-				<div class="col-sm-6"></div>
-				<div class="col-adjustment">
-				<small class="text-muted">City</small>
-				<small class="text-muted" style="margin-left:22.5%;">State</small>
-				</div>
-
-				<div class="col-sm-6"></div>
-				<input id="pincode" name="jumbo_one[]" class="col-sm-3" value="" type="number" require>
-				<input id="country" name="jumbo_one[]" class="col-sm-3" value="" type="text" require>
-
-				<div class="col-sm-6"></div>
-				<div class="col-adjustment">
-				<small class="text-muted">Pincode</small>
-				<small class="text-muted" style="margin-left:20.5%;">Country</small>
-				</div><br><br>
+				<div class="col-sm-5"></div>
+				<input id="pincode" name="jumbo_one[]" class="col-sm-3" value="" placeholder="pincode" type="number" require>
+				<input id="country" name="jumbo_one[]" class="col-sm-3" value="" placeholder="country" type="text" require><br><br><br>
 			
-				<label class="col-sm-6" for="telephone">Telephone (with STD code) </label>
+				<label class="col-sm-5" for="telephone">Telephone (with STD code) </label>
 				<div></div>
 				<input class="col-sm-3" id="telephone" name="jumbo_one[]" type="number" maxlength="10" value="" require><br><br>
 		 
-				<label class="col-sm-6" for="mob">Mobile Number </label>
+				<label class="col-sm-5" for="mob">Mobile Number </label>
 				<div></div>
 				<input id="mob" name="jumbo_one[]" class="col-sm-3" type="number" maxlength="10" value="" require> <br><br>
 		 
-				<label class="col-sm-6" for="email">Email </label>
+				<label class="col-sm-5" for="email">Email </label>
 				<div></div> 
 				<input id="email" name="jumbo_one[]" class="col-sm-3" type="email" placeholder="abc@example.com" require> 
 			</fieldset>
@@ -221,42 +204,28 @@
 			<br><br><br><br>
 			<div class="jumbotron" id="section2">
   			<fieldset class="form-group">
-				<label class="col-sm-6">Name of Father/Mother (or Guardian if the parents are not alive, state relationship of Guardian)</label>
+				<label class="col-sm-5">Name of Father/Mother (or Guardian if the parents are not alive, state relationship of Guardian)</label>
 				<div></div>
 				<input id="fathaddr" name="jumbo_two[]" class="col-sm-6" type="text" value="" require> <br><br><br>
 				
-				<label class="col-sm-6" for="addr">Enter Address of Father/Mother/Guardian</label>
-				<input class="col-sm-6" id="corraddr" name="jumbo_two[]" value="" type="text" require>		
-				<small class="text-muted">Street Address</small><br>
+				<label class="col-sm-5" for="addr">Enter Address of Father/Mother/Guardian</label>
+				<input class="col-sm-6" id="strtaddr" name="jumbo_one[]" value="" type="text" placeholder="Street Address" require><br><br>
 				
-				<div class="col-sm-6"></div>
-				<input id="addrline2" class="col-sm-6" name="jumbo_two[]" value="" type="text" require>
-				<span class="col-sm-6"></span><small class="text-muted">Address Line 2</small><br>
+				<div class="col-sm-5"></div>
+				<input id="addrline2" class="col-sm-6" name="jumbo_one[]" value="" placeholder="Address Line 2" type="text" require><br><br>
 				
-				<div class="col-sm-6"></div>
-				<input id="city" name="jumbo_two[]" class="col-sm-3" value="" type="text" require>
-				<input id="state" name="jumbo_two[]" class="col-sm-3" value="" type="text" require>
+				<div class="col-sm-5"></div>
+				<input id="city" name="jumbo_one[]" class="col-sm-3" value="" placeholder="City" type="text" require>
+				<input id="state" name="jumbo_one[]" class="col-sm-3" value="" placeholder="State" type="text" require><br><br>
 
-				<div class="col-sm-6"></div>
-				<div class="col-adjustment">
-				<small class="text-muted">City</small>
-				<small class="text-muted" style="margin-left:22.5%;">State</small>
-				</div>
-
-				<div class="col-sm-6"></div>
-				<input id="pincode" name="jumbo_two[]" class="col-sm-3" value="" type="number" require>
-				<input id="country" name="jumbo_two[]" class="col-sm-3" value="" type="text" require>
-
-				<div class="col-sm-6"></div>
-				<div class="col-adjustment">
-				<small class="text-muted">Pincode</small>
-				<small class="text-muted" style="margin-left:20.5%;">Country</small>	<br><br>
-				</div>				  
+				<div class="col-sm-5"></div>
+				<input id="pincode" name="jumbo_one[]" class="col-sm-3" value="" placeholder="pincode" type="number" require>
+				<input id="country" name="jumbo_one[]" class="col-sm-3" value="" placeholder="country" type="text" require><br><br><br>				  
 		 
-				<label class="col-sm-6" >Occupation of Father/Guardian</label>
+				<label class="col-sm-5" >Occupation of Father/Guardian</label>
 				<div></div>
 				<input name="jumbo_two[]" class="col-sm-3" type="text" value="" require> <br><br><br>
-		 		<label class="col-sm-6">Annual Income </label>
+		 		<label class="col-sm-5">Annual Income </label>
 				<div></div>
 				<input name="jumbo_two[]" class="col-sm-3" type="number" value="" require> 
 		 
@@ -265,19 +234,19 @@
 			<br><br><br><br>
 			<div class="jumbotron" id="section3">
   			<fieldset class="form-group">
-				<label class="col-sm-6">Religion </label>
+				<label class="col-sm-5">Religion </label>
 				<div></div>
 				<input name="jumbo_three[]" class="col-sm-3" type="text" value="" require> <br><br>
 		 	
-				<label class="col-sm-6">Caste/Subcaste </label>
+				<label class="col-sm-5">Caste/Subcaste </label>
 				<div></div>
 				<input name="jumbo_three[]" class="col-sm-3" type="text" value="" require> <br><br>
 		 
-				<label class="col-sm-6">Do you belong to Scheduled Caste/Tribe/OBC?</label>
+				<label class="col-sm-5">Do you belong to Scheduled Caste/Tribe/OBC?</label>
 				<label class="radio-inline"><input type="radio" name="jumbo_three_check1" value="Yes" require>Yes</label>
 				<label class="radio-inline"><input type="radio" name="jumbo_three_check1" value="No" require>No</label><br><br>
 				
-				<label class="col-sm-6">If Yes above, which?</label>
+				<label class="col-sm-5">If Yes above, which?</label>
 				<label class="radio-inline"><input type="radio" name="jumbo_three_check2" value="SC">Scheduled Caste</label>
 				<label class="radio-inline"><input type="radio" name="jumbo_three_check2" value="ST">Scheduled Tribe</label>
 				<label class="radio-inline"><input type="radio" name="jumbo_three_check2" value="OBC">OBC</label>
@@ -288,22 +257,22 @@
 			<br><br><br><br>
 			<div class="jumbotron" id="section4">
   			<fieldset class="form-group">
-				<label class="col-sm-6">Place of Domicile </label>
+				<label class="col-sm-5">Place of Domicile </label>
 				<div></div>
 				<input name="jumbo_four[]" class="col-sm-3" type="text" maxlength="255" value="" require> <br><br>
 		 
-				<label class="col-sm-6">Nationality </label>
+				<label class="col-sm-5">Nationality </label>
 				<div></div> 
 				<input id="element_21" name="jumbo_four[]" class="col-sm-3" type="text" value="" require> <br><br>
 
-				<label class="col-sm-6">Date of Birth </label>
+				<label class="col-sm-5">Date of Birth </label>
 			<input name="jumbo_four[]" class="col-sm-1" size="2" maxlength="2" placeholder="DD" type="text" require>
 			<div class="input-group-addon col-sm-1">/</div>
 			<input name="jumbo_four[]" class="col-sm-1" size="2" maxlength="2" placeholder="MM" type="text" require>
 			<div class="input-group-addon col-sm-1">/</div>
 	 		<input name="jumbo_four[]" class="col-sm-1" size="4" maxlength="4" placeholder="YYYY" type="text" require> <br><br>
 
-			<label class="col-sm-6">Do you belong to the Phsically Challenged(PC) Group?</label>
+			<label class="col-sm-5">Do you belong to the Phsically Challenged(PC) Group?</label>
 			<label class="radio-inline"><input type="radio" name="jumbo_four_check[]" value="Yes" require>Yes</label>
 			<label class="radio-inline"><input type="radio" name="jumbo_four_check[]" value="No" require>No</label><br><br>
 				
@@ -312,7 +281,7 @@
 			<br><br><br><br>
 			<div class="jumbotron" id="section5">
   			<fieldset class="form-group">
-				<label class="col-sm-6" >Qualifying Examination passed </label>
+				<label class="col-sm-5" >Qualifying Examination passed </label>
 
 				<span class="col-sm-6">
 				 <label class="radio-inline"><input id="be" type="radio" name="jumbo_five_check[]" value="B.E">B.E</label>
@@ -322,34 +291,34 @@
 				 <label class="radio-inline"><input id="bca" type="radio" name="jumbo_five_check[]" value="BCA">BCA</label>
 				 <label class="radio-inline"><input id="bsc" type="radio" name="jumbo_five_check[]" value="B.Sc">B.Sc</label> 
    				 <label class="radio-inline"><input id="bbm" type="radio" name="jumbo_five_check[]" value="BBM">BBM</label> 
-				</span><br>
-				<div class="col-sm-6"></div>
+				</span><br><br>
+				<div class="col-sm-5"></div>
 				<label class="col-sm-2">If any other, specify</label>
 				<input id="jumbo_five_chk" name="date_words" class="col-sm-2" type="text" maxlength="255" value=""/><br><br><br>
 				
-				<label class="col-sm-6">Institution of study </label>
+				<label class="col-sm-5">Institution of study </label>
 				<div></div>
-				<input name="jumbo_five[]" class="col-sm-6" type="text" maxlength="255" value=""  require/> <br><br>
+				<input name="jumbo_five[]" class="col-sm-5" type="text" maxlength="255" value=""  require/> <br><br>
 		 		
-				<label class="col-sm-6" >Studied From</label>
+				<label class="col-sm-5" >Studied From</label>
 				<input name="jumbo_five[]" class="col-sm-1" size="2" maxlength="2" placeholder="DD" type="text" require>
 				<div class="input-group-addon col-sm-1">/</div>
 				<input name="jumbo_five[]" class="col-sm-1" size="2" maxlength="2" placeholder="MM" type="text" require>
 				<div class="input-group-addon col-sm-1">/</div>
 	 			<input name="jumbo_five[]" class="col-sm-1" size="4" maxlength="4" placeholder="YYYY" type="text" require><br><br>
 
-				<label class="col-sm-6" >Studied To</label>
+				<label class="col-sm-5" >Studied To</label>
 				<input name="jumbo_five[]" class="col-sm-1" size="2" maxlength="2" placeholder="DD" type="text" require>
 				<div class="input-group-addon col-sm-1">/</div>
 				<input name="jumbo_five[]" class="col-sm-1" size="2" maxlength="2" placeholder="MM" type="text" require>
 				<div class="input-group-addon col-sm-1">/</div>
 	 			<input name="jumbo_five[]" class="col-sm-1" size="4" maxlength="4" placeholder="YYYY" type="text" require><br><br>	
 				
-				<label class="col-sm-6">Institution of study</label>
+				<label class="col-sm-5">Institution of study</label>
 				<div></div>
-				<input name="jumbo_five[]" class="col-sm-6" type="text" maxlength="255" value=""  require/> <br><br>
+				<input name="jumbo_five[]" class="col-sm-5" type="text" maxlength="255" value=""  require/> <br><br>
 				
-				<label class="col-sm-6" >Marks obtained in the Qualifying Examination (Bachelor’s Degree):</label> <br><br><br>
+				<label class="col-sm-5" >Marks obtained in the Qualifying Examination (Bachelor’s Degree):</label> <br><br><br>
 				<span class="alert alert-info">INFO: While computing percentage of marks (all years/semesters) of qualifying examination, only FIRST
 					ATTEMPT marks should be taken into account.</span><br><br><br>
 					<table class="table table-hover">
@@ -432,18 +401,18 @@
 					</table>
 					<br>
 				
-				<label class="col-sm-6" >CAT Score And Percentile</label>
+				<label class="col-sm-5" >CAT Score And Percentile</label>
 				<input name="catscore" class="col-sm-3" placeholder="Score" type="text">
 				<input name="catpercent" class="col-sm-3" placeholder="percentile" type="text"><br><br>
 
-				<label class="col-sm-6" >GMAT Score And Percentile</label>
+				<label class="col-sm-5" >GMAT Score And Percentile</label>
 				<input name="gmatscore" class="col-sm-3" placeholder="Score" type="text">
 				<input name="gmatpercent" class="col-sm-3" placeholder="percentile" type="text"><br><br>
 
-				<label class="col-sm-6" >CAT/GMAT Hall Ticket/ Admit Card/Test Registration No.</label>
+				<label class="col-sm-5" >CAT/GMAT Hall Ticket/ Admit Card/Test Registration No.</label>
 				<input name="jumbo_five[]" class="col-sm-4" type="text" require><br><br>	
 
-				<label class="col-sm-6" >No. Of Years and Months Worked(Enclose a certificate from the employer). </label>
+				<label class="col-sm-5" >No. Of Years and Months Worked(Enclose a certificate from the employer). </label>
 				<input name="jumbo_five[]" class="col-sm-1" size="2" maxlength="2" placeholder="YY" type="text" require>
 				<input name="jumbo_five[]" class="col-sm-1" size="2" maxlength="2" placeholder="MM" type="text" require><br><br>
 
@@ -478,9 +447,9 @@
 					 </tbody>
  					</table><br><br>
 				
-				<label class="col-sm-6">Specify choice of center for MBA selection process </label>
+				<label class="col-sm-5">Specify choice of center for MBA selection process </label>
 
-				<span class="col-sm-6">
+				<span class="col-sm-5">
 				 <label class="radio-inline"><input type="radio" name="jumbo_five_centre[]" value="NITK" require>NITK, Surathkal</label>
 				 <label class="radio-inline"><input type="radio" name="jumbo_five_centre[]" value="Delhi">New Delhi</label>
 				</span><br><br>	
@@ -491,23 +460,23 @@
 			<div class="jumbotron" id="section6">
   			<fieldset class="form-group">
 				<h3 style="text-align:center;" >Demand Draft Details</h3><br><br>
-						<label class="col-sm-6">Name of Issuing Bank </label>
+						<label class="col-sm-5">Name of Issuing Bank </label>
 						<input name="jumbo_six[]" class="col-sm-4" type="text" value="" require/> <br><br>
 						
-						<label class="col-sm-6">Drawn At </label>
+						<label class="col-sm-5">Drawn At </label>
 						<input name="jumbo_six[]" class="col-sm-4" type="text" maxlength="255" value="" require/> <br><br>
 						
-						<label class="col-sm-6">DD Number </label>
+						<label class="col-sm-5">DD Number </label>
 						<input name="jumbo_six[]" class="col-sm-4" type="text" maxlength="255" value="" require/><br><br>
 						
-						<label class="col-sm-6" >DD Date</label>
+						<label class="col-sm-5" >DD Date</label>
 						<input name="jumbo_six[]" class="col-sm-1" size="2" maxlength="2" placeholder="DD" type="text" require>
 						<div class="input-group-addon col-sm-1">/</div>
 						<input name="jumbo_six[]" class="col-sm-1" size="2" maxlength="2" placeholder="MM" type="text" require>
 						<div class="input-group-addon col-sm-1">/</div>
 						<input name="jumbo_six[]" class="col-sm-1" size="4" maxlength="4" placeholder="YYYY" type="text" require><br><br>	
 						
-						<label class="col-sm-6">Rupees </label>
+						<label class="col-sm-5">Rupees </label>
 						<div class="col-sm-1">
 						<div class="input-group-addon ">Rs</div>
 						</div>
@@ -523,7 +492,7 @@
 		<h2>DECLARATION OF CANDIDATE</h2>
 		I hereby declare that to the best of my knowledge, the particulars furnished in this application are correct.<br><br>
 		I am willing to forfeit the seat secured for the course, if any information provided by me is false.<br><br>
-		If selected for admission, I promise to abide by the condition of admission and Rules of the Institute, and the Academic Regulations that govern the programme of study/ research.<br><br>
+		If selected for admission, I promise to abide by the condition of admission, Rules of the Institute, and Academic Regulations that govern the programme of study/research.<br><br>
 
 				
 			</fieldset>
@@ -535,8 +504,8 @@
 				</div><br>
 		</div>
 
-			<br><button type="submit" value="save" class="btn btn-primary button1" style="margin-left:35%;">Save</button>
-			<button type="button" class="btn btn-primary button1" style="width:15%;" data-toggle="modal" data-target="#myModal">require Documents</button>
+			<br><button type="submit" value="save" class="btn btn-primary button1" style="margin-left:30%;">Save</button>
+			<button type="button" class="btn btn-primary button1" style="width:15%;" data-toggle="modal" data-target="#myModal">Required Documents</button>
 			<button type="submit" value="submit" class="btn btn-primary button1">Submit</button>
 			
 		
@@ -546,8 +515,13 @@
 		</div>
 		<aside>
 		</aside>
-		<footer class="panel-footer">
-			Copyright © 2014 National Institute of Technology Karnataka, Surathkal.
-		</footer>
-	</body>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Copyright © 2014 National Institute of Technology Karnataka, Surathkal.</p>
+</footer>
+
+</body>
 </html>

@@ -1,0 +1,25 @@
+<?php
+
+	
+		$usr = $_POST['name'];
+		$pas = $_POST['pwd'];
+		$pas = hash('gost',$pas,false);
+		$email = $POST['eml'];
+		$mob = $_POST['mob'];
+		$hsh = hash('md5',$usr.$email,false);
+		
+		
+		$db = new mysqli($db_server,$db_user,$db_pass,$db);
+		$db->query("INSERT INTO `lg_details` VALUES (123, '$pas', '', 0)");
+		$db->query("INSERT INTO `confirm` VALUES (123, '$hsh')");
+		
+		$txt = "Please Click on the link to activate the account\n";
+		$txt = $txt."localhost/ITA/html/project/verify.php?chk=".$hsh."&id=123";
+		
+		$subject = "Email Conformation for NITK PORTAL";
+		$txt = wordwrap($txt,70);
+		mail($email,$subject,$txt);
+	
+
+
+?>

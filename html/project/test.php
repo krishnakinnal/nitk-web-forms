@@ -316,7 +316,7 @@ $FDF_content = $xfdf_head.$xml_data.$xfdf_end;
 $FDF_file = fopen('new_fdf.fdf', 'w');
 fwrite($FDF_file, $FDF_content);
 fclose($FDF_file);
-$pdf_template = "mba-form.pdf";
+$pdf_template = "FORMS/mba-form.pdf";
 $new_fillup_pdf = "new.pdf";
 
 $pdftk_command = 'pdftk '. $pdf_template .' fill_form new_fdf.fdf output '.$new_fillup_pdf.' flatten';

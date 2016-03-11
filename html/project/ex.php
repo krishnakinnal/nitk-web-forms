@@ -1,6 +1,6 @@
 <?php
 
-	$db = new mysqli('localhost', 'root', 'root', 'testdb') or die("Unable to connect");	
+	$db = new mysqli('localhost', 'root', '', 'testdb') or die("Unable to connect");	
 
 	$i =  hash('gost', "Hello" ,false);
 
