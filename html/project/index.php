@@ -103,14 +103,14 @@
   <div class="row content">
 			
 			<div style="margin-top:10%;"></div>
-			<div class="col-sm-6">
+			<div class="col-sm-5">
 				
 				<!--	<img class="img-circle" src="images/nitk.jpg" alt="NITK" width="50%" height="50%">	-->
 					
 			</div>
   
   
-			<div class="col-sm-6">
+			<div class="col-sm-7">
 			<div class="jumbotron">
 			<span class="glyphicon glyphicon-log-in"></span> Login
   			<form class="form-horizontal" action="login.php" method="post">

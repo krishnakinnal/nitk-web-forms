@@ -80,7 +80,7 @@
     <div class="panel panel-primary" style="width:800px;margin-left:20%;">
       			<div class="panel-heading">Fill up your Details</div>
       		<div class="panel-body">
-			<form action="signup.php" method="post" onsubmit="event.preventDefault(); Check_all();">
+			<form id="myform" action="signup.php" method="post" onsubmit=" Check_all();document.forms["myform"].submit();">
 			<div class="jumbotron" id="section1">
   			<fieldset class="form-group">
     				<label class="col-sm-6">Enter Your Name</label>
@@ -128,7 +128,9 @@
 							return false;
 						}
 					else
+                        
 						return true;
+                
 			}
 		</script>
 <footer class="container-fluid">

@@ -24,7 +24,6 @@
 		
 
 ?>		
-</html>
 <html lang="en">
 <head>
   <title>
@@ -37,7 +36,7 @@
   		<script src="../../bootstrap-3.3.6/js/bootstrap.min.js"></script>
   <style>
     
-    .row.content {height: 4500px;}
+    .row.content {height: 4650px;}
     
     
     .sidenav {
@@ -72,7 +71,8 @@
     
 
 	   ul.nav-pills {
-				top: 20px;
+				top: 150px;
+                left: 50px;
 				position: fixed;
 			}
 			.form-horizontal{
@@ -87,24 +87,24 @@
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">NITK PORTAL</a>
+      <a class="navbar-brand" href="../../index.php">NITK PORTAL</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li class="active"><a href="../../index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
       
     </ul>
     <ul class="nav navbar-nav navbar-right">
-		<li class="active"><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+		<li class="active"><a href="../../logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
 </head>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
 	
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top:20px;">
   <div class="row content">
     <div class="col-sm-2 sidenav ">
-      
+            <br><br>
 				<nav id="myScrollspy">
 					<ul class="nav nav-pills nav-stacked">
 						<li class="active"><a href="#section1">Section 1</a></li>
